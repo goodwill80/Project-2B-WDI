@@ -1,5 +1,14 @@
 <h1>All reviews</h1>
+<h2 class="current-category"><%= params[:category] %></h2>
+
+<%if @products.count == 0%>
+
+<h1>There is currently no review in this category</h1>
+
+<%else%>
 
 <% @products.each do |product| %>
 <h2><%= link_to product.country, product_path(product) %></h2>
+
+<% end %>
 <% end %>
