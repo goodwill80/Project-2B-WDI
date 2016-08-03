@@ -1,8 +1,20 @@
+
+<div class="col-md-8">
 <h2><%= @product.country %></h2>
 <h3><%= @product.place %></h3>
 <h4>Category: <%= @product.category.name %></h4>
 <p>Comments: <%= @product.description %></p>
 <p><%= @product.name %></p>
+</div>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+<div>
+  <%= link_to "Add Review", new_product_review_path(@product)%>
+</div>
+
 <%= link_to "Back", root_path(@product) %>
 <% if user_signed_in? %>
 <%if @product.user_id == current_user.id %>
