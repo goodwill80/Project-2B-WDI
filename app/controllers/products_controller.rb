@@ -2,8 +2,13 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.order("created_at DESC")
+    if params[:category].blank?
+      @products = Product.all.order("created_at DESC")
+  else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(:category_id => @category_id).order("created_at DESC")
   end
+end
 
   def show
   end
@@ -24,9 +29,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id]}
   end
 
   def update
+    @product.category_id = params[:category_id]
     if @product.update(product_params)
       redirect_to product_path(@product)
     else
