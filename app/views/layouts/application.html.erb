@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hoppers</title>
+    <title>Hoppers Review</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +15,7 @@
           <div class="container">
 
             <div class="navbar-header">
-              <%= link_to "Hop review", root_path, class:"navbar-brand" %>
+              <%= link_to "Hopers review", root_path, class:"navbar-brand" %>
              </div>
              <ul class="nav navbar-nav">
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -26,6 +26,11 @@
         <%end%>
         </ul>
 
+        <ul class="nav navbar-nav navbar-right" >
+                  <%if user_signed_in? %>
+                  <li><%=link_to "Add Review", new_product_path%></li>
+                  <% end %>
+                </ul>
 
 
           </div>
