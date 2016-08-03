@@ -11,6 +11,8 @@
 
   <div class="col-md-4">
 
+    <%= render @product.reviews %>
+
 <div>
   <%= link_to "Add Review", new_product_review_path(@product)%>
 </div>
