@@ -1,0 +1,14 @@
+<h1>All reviews</h1>
+
+<%if @products.count == 0%>
+
+<h1>There are currently no reviews in this category</h1>
+
+<%else%>
+
+<% @products.each do |product| %>
+<h2><%= link_to product.country, products_path(@products) %></h2>
+<% end %>
+<%end%>
+
+<%= link_to "Share your reviews", new_product_path %>
