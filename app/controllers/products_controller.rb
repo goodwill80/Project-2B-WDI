@@ -14,6 +14,7 @@ end
   def show
   end
 
+
   def new
     @product = current_user.products.build
     @categories = Category.all.map{ |c| [c.name, c.id]}
