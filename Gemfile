@@ -16,6 +16,7 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 4.2'
 gem 'bcrypt',         '3.1.11'
 gem 'pg', '~> 0.18.4'
+gem 'paperclip', '~> 5.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.4'
 
