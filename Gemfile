@@ -4,9 +4,21 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'pry'
+gem 'faker', '~> 1.6', '>= 1.6.3'
+gem 'will_paginate',           '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
+gem 'carrierwave',             '0.11.2'
+gem 'mini_magick',             '4.5.1'
+gem 'fog',                     '1.38.0'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'bcrypt',         '3.1.11'
+gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.4'
+
+# Use Puma as the app server
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +48,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
