@@ -2,7 +2,10 @@
 <h3><%= @product.place %></h3>
 <p><%= @product.description %></p>
 <p><%= @product.name %></p>
-
+<%= link_to "Back", root_path(@product) %>
+<% if user_signed_in? %>
+<%if @product.user_id == current_user.id %>
 <%= link_to "Edit", edit_product_path(@product) %>
 <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to "Back", root_path(@product) %>
+<% end %>
+<% end %>
