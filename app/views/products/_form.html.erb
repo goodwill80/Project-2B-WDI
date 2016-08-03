@@ -1,6 +1,6 @@
 <%= simple_form_for @product, :html => { :multipart => true } do |f| %>
-<%= f.select :category_id, @categories%>
-<%= f.label :"Subject" %>
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "select a category")%>
+<%= f.file_field :product_img %>
 <%= f.text_field :subject %>
 <%= f.label :"Name" %>
 <%= f.text_field :name %>
