@@ -1,6 +1,7 @@
 <h2><%= @product.country %></h2>
 <h3><%= @product.place %></h3>
-<p><%= @product.description %></p>
+<h4>Category: <%= @product.category.name %></h4>
+<p>Comments: <%= @product.description %></p>
 <p><%= @product.name %></p>
 <%= link_to "Back", root_path(@product) %>
 <% if user_signed_in? %>
