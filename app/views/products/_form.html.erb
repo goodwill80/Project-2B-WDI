@@ -1,19 +1,35 @@
 
-<div>
+<div class="container">
 <%= simple_form_for @product, :html => { :multipart => true } do |f| %>
+<div class="form">
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "select a category")%>
+</div>
+<div class="form">
 <%= f.file_field :product_img %>
+</div>
+<br></br>
+<div class="form">
 <%= f.label :"Establishment" %>
 <%= f.text_field :subject%>
+</div>
+<div class="form">
 <%= f.label :"Place" %>
 <%= f.text_field :place %>
+</div>
+<div class="form">
 <%= f.label :"Name of Staff (if any)" %>
 <%= f.text_field :name %>
+</div>
+<div class="form">
 <%= f.label :"Your name" %>
 <%= f.text_field :country %>
+</div>
+<div class="form">
 <%= f.label :"Your experience" %>
 <%= f.text_field :description %>
-
+</div>
+<div class="form">
 <%= f.submit "Submit", class: "btn btn-primary" %>
 <%end%>
+</div>
 </div>
