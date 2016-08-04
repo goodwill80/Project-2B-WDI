@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hoppers Review</title>
+    <title>Advocates</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +15,7 @@
           <div class="container">
 
             <div class="navbar-header">
-              <%= link_to "Spice Experience", root_path, class:"navbar-brand" %>
+              <%= link_to "Customer-Advocates", root_path, class:"navbar-brand" %>
              </div>
              <ul class="nav navbar-nav">
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -41,7 +41,7 @@
 
 
                   <%if user_signed_in? %>
-                  <li><%=link_to "Add Spices", new_product_path%></li>
+                  <li><%=link_to "Share your experience", new_product_path%></li>
                   <% end %>
                 </ul>
 
@@ -49,13 +49,10 @@
           </div>
         </nav>
 
-
-
-
-
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>

@@ -1,2 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: white;
+}
+
+h1, h2, h4 {
+  color: black;
+}
+
+h3 {
+  color: red;
+}
+
+.product {
+  height: 280px;
+  width: 250px;
+}

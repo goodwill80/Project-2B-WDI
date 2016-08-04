@@ -1,14 +1,22 @@
-<h1>All reviews</h1>
+
+<h2>Be an excellent service advocator and share your experience with us!</h2>
+
+<h3>Recent feeds</h3>
 <h2 class="current-category"><%= params[:category] %></h2>
 
 <%if @products.count == 0%>
 
-<h1>There is currently no review in this category</h1>
+<h4>No entries in this category</h4>
 
 <%else%>
 
+<div class="row">
 <% @products.each do |product| %>
-<h2><%= link_to product.country, product_path(product) %></h2>
-
+<div class="col-md-3">
+<a href="/products/<%= product.id %>">
+  <%=image_tag product.product_img.url(:product_index), class: "product"%>
+</a>
+</div>
 <% end %>
+</div>
 <% end %>

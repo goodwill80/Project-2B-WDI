@@ -1,9 +1,12 @@
 
 <div class="col-md-8">
-<h2><%= @product.country %></h2>
+<h2><%= @product.subject %></h2>
 <h3><%= @product.place %></h3>
-<h4>Category: <%= @product.category.name %></h4>
-<p>Comments: <%= @product.description %></p>
+<p><strong>Category: </strong></p>
+<p><%= @product.category.name %></p>
+<p><strong>Your experience: </strong></p>
+<p><%= @product.description %></p>
+<p><strong>From: </strong></p>
 <p><%= @product.name %></p>
 </div>
 
