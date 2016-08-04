@@ -17,6 +17,7 @@ gem 'devise', '~> 4.2'
 gem 'bcrypt',         '3.1.11'
 gem 'pg', '~> 0.18.4'
 gem 'paperclip', '~> 5.0'
+gem 'seed', '~> 1.1', '>= 1.1.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.4'
 
