@@ -1,5 +1,4 @@
-
-<h2>Be an advocator for service quality and share your experience with us!</h2>
+<div id = "home">
 
 <h3>Recent feeds</h3>
 <h2 class="current-category"><%= params[:category] %></h2>
@@ -15,8 +14,11 @@
 <div class="col-md-3">
 <a href="/products/<%= product.id %>">
   <%=image_tag product.product_img.url(:product_index), class: "product"%>
+  <p><%= product.subject %></p>
 </a>
 </div>
 <% end %>
 </div>
 <% end %>
+
+</div>

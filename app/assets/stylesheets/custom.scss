@@ -1,24 +1,85 @@
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  background-color: white;
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
 
-h1, h2, h4 {
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url("http://www.parcsovereign.com/images/service_banner.jpg");
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+body {
+  background-color: #EAEAEA;
+}
+
+h1, h4 {
   color: black;
 }
 
-h3 {
-  color: red;
+#home {
+  margin-top: -60px
+}
+
+.row {
+  text-align: center;
+  font-size: 15px;
+}
+.navbar {
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+}
+.navbar-default {
+	background-color: #fff;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	.navbar-nav > li > a {
+		color: #222;
+		&:hover {
+			color: darken(#f1c40f, 5%);
+			transition: 0.5s;
+		}
+	}
+
+	.navbar-header {
+
+		.navbar-brand {
+			color: #222;
+			letter-spacing: 1.4px;
+		}
+
+	}
+
+	.dropdown-menu > li > a:hover {
+		background-color: darken(#f1c40f, 5%);
+		color: #fff;
+	}
+
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: darken(#f1c40f, 5%);
+		color: #fff;
+	}
+
 }
 
 .product {
-  height: 250px;
-  width: 250px;
+	height: 260px;
+	width: 250px;
+	margin-bottom: 10px;
 }
 
-.book-show {
-  height: 475px;
-  width: 325px;
+.product-show {
+	height: 400px;
+	width: 325px;
 }
