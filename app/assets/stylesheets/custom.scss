@@ -3,11 +3,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
+
 
 .jumbotron {
     margin-bottom: 0px;
@@ -30,6 +26,9 @@ h1, h4 {
 #home {
   margin-top: -40px
 }
+
+
+
 
 .notice{
   background-color: yellow;
@@ -58,7 +57,10 @@ h1, h4 {
 		}
 	}
 
-
+.description {
+  width: 200%;
+  height: 20px;
+}
 
 	.navbar-header {
 
