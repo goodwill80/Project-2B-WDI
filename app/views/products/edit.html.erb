@@ -5,39 +5,38 @@
 <%= f.select :category_id, @categories%>
 </div>
 <div class="form">
-<%= f.file_field :product_img %>
+<%= f.input :subject, label: "Establishment"%>
 </div>
 
 <div class="form">
-<%= f.label :"Establishment" %>
+<%= f.input :place %>
 </div>
+
 <div class="form">
-<%= f.text_field :subject%>
+<%= f.input :name, label: "Name of Staff" %>
 </div>
-<div class="form">
-<%= f.label :"Place" %>
-</div>
-<div class="form">
-<%= f.text_field :place %>
-</div>
-<div class="form">
-<%= f.label :"Name of Staff (if any)" %>
-</div>
-<div class="form">
-<%= f.text_field :name %>
-</div>
+
+
+
 <div class="form">
 <%= f.label :"Your name" %>
 </div>
 <div class="form">
 <%= f.text_field :country %>
 </div>
+
+</br>
+
 <div class="form">
-<%= f.label :"Your experience" %>
+<%= f.file_field :product_img %>
 </div>
+
+</br>
 <div class="description">
-<%= f.text_field :description %>
+<%= f.input :description%>
 </div>
+
+
 <br></br>
 <%= f.submit "Submit", class: "btn btn-primary" %>
 <%end%>

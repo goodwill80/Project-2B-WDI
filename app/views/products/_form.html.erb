@@ -1,46 +1,52 @@
+<div id="img" class="container">
+  <img id="photo" src="https://static.pexels.com/photos/105066/pexels-photo-105066-large.jpeg"/>
+  <h3>Share your service experience with us, and start advocating on good quality service!</h3>
+</div>
 
-<div class="container">
+<div id="formexp" class="container">
 <%= simple_form_for @product, :html => { :multipart => true } do |f| %>
+<h1>Share your Experience</h1>
 <div class="form">
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "select a category")%>
 </div>
+
+</br>
 <div class="form">
-<%= f.file_field :product_img %>
+<%= f.input :subject, label: "Establishment"%>
 </div>
 
 <div class="form">
-<%= f.label :"Establishment" %>
+<%= f.input :place %>
 </div>
+
 <div class="form">
-<%= f.text_field :subject%>
+<%= f.input :name, label: "Name of Staff" %>
 </div>
-<div class="form">
-<%= f.label :"Place" %>
-</div>
-<div class="form">
-<%= f.text_field :place %>
-</div>
-<div class="form">
-<%= f.label :"Name of Staff (if any)" %>
-</div>
-<div class="form">
-<%= f.text_field :name %>
-</div>
+
+
+
 <div class="form">
 <%= f.label :"Your name" %>
 </div>
 <div class="form">
 <%= f.text_field :country %>
 </div>
+
+</br>
+
 <div class="form">
-<%= f.label :"Your experience" %>
+<%= f.file_field :product_img %>
 </div>
+
+</br>
 <div class="description">
-<%= f.text_field :description%>
+<%= f.input :description, size: "30x10"%>
 </div>
+
 <br></br>
 <div class="form">
 <%= f.submit "Submit", class: "btn btn-primary" %>
 <%end%>
 </div>
+
 </div>

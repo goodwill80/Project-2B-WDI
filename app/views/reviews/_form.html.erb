@@ -1,3 +1,4 @@
+
 <%= simple_form_for([@product, @product.reviews.build]) do |f| %>
 
 <div id="review-form">
@@ -5,7 +6,7 @@
 </div>
 
 
-<%= f.input :comment %>
+<%= f.input :comment, size: "50x20" %>
 <%= f.button :submit%>
 
 <%end%>

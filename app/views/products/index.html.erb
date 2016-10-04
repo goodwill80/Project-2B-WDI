@@ -1,10 +1,44 @@
-<div id = "home">
-<h3>Recent feeds</h3>
-<div class="notice"
-<p>Note: Images and Names mentioned are coincidental and does not serve any representations. All names and images will be removed immediately after project demostration (Web Development Course).</p>
-</div>
 
-<h2 class="current-category"><%= params[:category] %></h2>
+
+<div id="home">
+
+    <div class="container">
+      <div class="jumbotron">
+          <h1>The Advocate</h1>
+          <h5>Help to enhance service professions. Be an advocator for service quality and share your experience with us!</h5>
+      </div>
+
+    <h3>Recent feeds</h3>
+    <!-- <div class="notice"
+<p>Note: Images and Names mentioned are coincidental and does not serve any representations. All names and images will be removed immediately after project demostration (Web Development Course).</p>
+</div> -->
+
+    <h2 class="current-category"><%= params[:category] %></h2>
+
+    <%if @products.count == 0%>
+
+    <h4>No entries in this category</h4>
+
+    <%else%>
+
+    <div  class="row">
+        <% @products.each do |product| %>
+        <div id="productlist" class="col-md-3">
+            <%=image_tag product.product_img.url(:product_index), class: "product"%>
+            <p>
+                <strong><%= product.subject %></strong>
+            </p>
+            <p><%= product.category.name %></p>
+            <a href="/products/<%= product.id %>">See Review
+            </a>
+        </div>
+        <% end %>
+    </div>
+    <% end %>
+
+</div>
+  </div>
+<!-- <h2 class="current-category"><%= params[:category] %></h2>
 
 <%if @products.count == 0%>
 
@@ -13,15 +47,18 @@
 <%else%>
 
 <div class="row">
-<% @products.each do |product| %>
-<div class="col-md-3">
-<a href="/products/<%= product.id %>">
-  <%=image_tag product.product_img.url(:product_index), class: "product"%>
-  <p><%= product.subject %></p>
-</a>
+  <% @products.each do |product| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%=image_tag product.product_img.url(:product_index), class: "product"%>
+      <div class="caption">
+        <h3><%= product.subject %></h3>
+        <p><%= product.category.name %></p>
+        <p><a href="/products/<%= product.id %>" class="btn btn-primary" role="button">Reviews</a></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
 </div>
-<% end %>
-</div>
-<% end %>
-
-</div>
+</div> -->

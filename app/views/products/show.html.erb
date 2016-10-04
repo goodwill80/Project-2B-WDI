@@ -1,39 +1,49 @@
 <div class="row">
 
-  <div class="col-md-4">
+  <div id="showimg" class="col-md-4">
   <%=image_tag @product.product_img.url(:product_index), class: "product-show"%>
 </div>
 
-<div class="col-md-8">
+<div id="des" class="col-md-8">
 <h2><%= @product.subject %></h2>
-<h3><%= @product.place %></h3>
-<p><strong>Category: </strong></p>
-<p><%= @product.category.name %></p>
+<p><strong>Place: </strong><%= @product.place %></p>
+<p><strong>Category: </strong><%= @product.category.name %></p>
 <p><strong>Your experience: </strong></p>
+<div class="space">
 <p><%= @product.description %></p>
-<p><strong>From: </strong></p>
-<p><%= @product.name %></p>
 </div>
-</div>
+</br>
+<p><strong>From: </strong><%= @product.name %></p>
+</br>
 
 
-<div class="row">
 
-  <div class="col-md-4">
-
-    <%= render @product.reviews %>
-
-<div>
-  <%= link_to "Add Review", new_product_review_path(@product)%>
-</div>
-
-<%= link_to "Back", root_path(@product) %>
 <% if user_signed_in? %>
 <%if @product.user_id == current_user.id %>
 <%= link_to "Edit", edit_product_path(@product) %>
 <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
 <% end %>
+
+
+</div>
+
+</div>
+
+<div id="addreview">
+  <%= link_to "Add More Reviews", new_product_review_path(@product)%>
+</div>
+</br>
+
+<div id="review" class="row">
+  <div id="otherreviews" class="col-md-4">
+    <%= render @product.reviews %>
+</div>
+</div>
+
+<div class="row">
+<button class="btn btn-default>"><%= link_to "Back", root_path(@product) %></button>
+</div>
 
 <script>
 $('.review-rating').raty({
